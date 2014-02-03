@@ -1,7 +1,7 @@
 {
   "name": "express-sequelize",
   "description": "Adds Sequelize Promise support to Express rendering.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Zihua Li <i@zihua.li>",
   "keywords": [
     "express",

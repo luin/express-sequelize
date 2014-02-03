@@ -5,12 +5,7 @@ Methods which now support `Promises`:
 
    - `res.render`
    - `res.send`
-   - `res.redirect`
-
-Methods which now support `Queries`:
-
-   - `res.render`
-   - `res.send`
+   - `res.json`
 
 ## Installation
 

@@ -18,6 +18,33 @@ express.response.render = function expresssequelize_render (view, options, callb
   });
 };
 
+var json = express.response.json;
+express.response.json = function expresssequelize_json () {
+  var self = this;
+  var args = arguments;
+  var body = args[0];
+  var status;
+  if (2 === args.length) {
+    // res.json(body, status) backwards compat
+    if ('number' === typeof args[1]) {
+      status = args[1];
+    } else {
+      status = body;
+      body = args[1];
+    }
+  }
+  return resolve(body, function(err, result) {
+    if (err) {
+      return self.req.next(err);
+    }
+    if (typeof status !== 'undefined') {
+      json.call(self, status, result);
+    } else {
+      json.call(self, result);
+    }
+  });
+};
+
 var send = express.response.send;
 express.response.send = function expresssequelize_send () {
   var args = Array.prototype.slice.apply(arguments);
