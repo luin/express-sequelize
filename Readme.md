@@ -1,5 +1,5 @@
 ## Background
-This library is heavily inspired by the [express-mongoose](https://github.com/LearnBoost/express-mongoose). It's offer the same features as express-mongoose but for the sequelize.
+This library is heavily inspired by the [express-mongoose](https://github.com/LearnBoost/express-mongoose). It offers the same features as express-mongoose but for the sequelize instead of mongoose.
 
 Methods which now support `Promises`:
 
